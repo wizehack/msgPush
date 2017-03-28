@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
 import socket
-import select
-import sys
 
 from sys import argv
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
@@ -35,7 +33,6 @@ class S(BaseHTTPRequestHandler):
 			s.connect(address)
 		except:
 			print("Unable to connect")
-			sys.exit()
 
 		s.send(post_data)
 		s.close()
